@@ -1,0 +1,207 @@
+h1{
+    color:blue;
+}
+body{
+    text-align:center;
+}
+div{
+    height:100px;
+    /* width:150px; */
+    /* width:200px; */
+    /* changed for shrink */
+    width:50px;
+
+    display:inline-block;
+    border:2px solid black;
+    /* in flex item are try to fit in there block */
+}
+#flex{
+    /* width:600px; */
+    /* changed for shrink or grow */
+    width:800px;
+    /* height:600px; */
+    height:300px;
+    /* changed for shrink */
+    display:flex;
+    flex-direction:row;
+    /* ## flex-direction decide the axis of the content or document */
+
+    /* direction right to left */
+
+    /* flex-direction:row-reverse; */
+    /* direction left to rght */
+
+    /* flex-direction:column; */
+    /* direction top to bottom
+    and also box inside it try to fit in it's boundary line */
+
+    /* flex-direction:column-reverse; */
+    /* direction bottom to top
+    and also box inside it try to fit in it's boundary line */
+
+    justify-content:start;
+    /* it just shift the content to the right side */
+   
+    justify-content:end;
+    /* it just shift the content to the left side */
+
+    justify-content:space-around;
+    /* make space between and sides the box according to the space present surrounding to the boxes */
+
+    justify-content:space-between;
+    /* divide equal space between box */
+
+    justify-content:space-evenly;
+    /* divide space equally from start to end with box */
+
+    justify-content:center;
+    /* it just shift the content to the center */
+
+    /* flex-wrap:wrap; */
+    /* ## used to generate space */
+
+    /* shift the box to the top side */
+
+    /* flex-wrap:wrap-reverse; */
+    /* shift the box to the bottom side or it is oposite of wrap or we can say that its bottom act as top side*/
+
+    /* align-items:center; */
+    /* it can use when boxes are at irregular position or irregular size */
+    /* in this time column is the main axis so action performed according to top to bottom */
+
+    align-items:flex-start;
+    /* it is used to align the whole items or document present */
+
+    /* align-content:flex-end; */
+    /* it also remove the space betwen the the box which is generated due to wrap */
+    /* it align the content at the end or bottom side */
+
+    /* align-content:flex-start; */
+    /* it align the content at the start or top side */
+
+    /* align-content:center; */
+    /* it align the content in the center*/
+
+
+}
+#one{
+    background-color:rgb(77, 201, 201);
+}
+#two{
+    background-color:bisque;
+    height:200px;
+
+    /* align-self:flex-end; */
+    /* it is used to align it self only */
+
+    /* flex-shrink: 2; */
+
+    flex-grow:1;
+
+}
+#three{
+    background-color:blueviolet;
+    height:75px;
+}
+#four{
+    background-color:rgb(239, 111, 154);
+    flex-grow:2;
+}
+#five{
+    background-color:rgb(80, 116, 216);
+    /* align-self:flex-end; */
+
+    /* align-self:center; */
+
+    flex-shrink:0;
+
+}
+#media{
+    background-color:rgb(106, 115, 209);
+    height: 100px;
+    width:100px;
+    transition-property:all;
+    transition-duration:2s;
+    transition-timing-function:step(3);
+    transition-delay:1s;
+
+    /* transition in short way */
+
+    transition:all 2s ease-in 1s;
+    transform:rotate(45deg);
+    position:absolute;
+    top: 500px;
+    left:500px;
+    transform:scale(2);
+    transform:scale(1,2);
+    /* animation-name:animation;
+    animation-duration:1s;
+    animation-timing-function:ease-in;
+    animation-delay:3s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate; */
+    animation: animation 2s ease-in 1s infinite normal;
+}
+
+
+@media(min-width:600px){
+    #media{
+        background-color:red;
+    }
+}
+@media(min-width:600px) and (max-width:700px){
+    #media{
+        background-color:rgb(18, 185, 102);
+    }
+}
+#media:hover{
+    background-color:palegreen;
+    font-size:20px;
+    transform:scaleY(2);
+    transform:rotate(360deg);
+    transform:translate(400px,100px);
+}
+#media:active{
+    background-color:yellow;
+    transform:rotate(-60deg);
+    transform:skew(60deg);
+}
+
+@keyframes animation{
+    from {background-color:rgb(106, 115, 209);
+    left:0px;}
+    to {background-color:rgb(255, 0, 0);
+    left:400px;}
+}
+
+#media2{
+    background-color:greenyellow;
+    height: 100px;
+    width:100px;
+    transition-property:all;
+    transition-duration:2s;
+    transition-timing-function:step(3);
+    transition-delay:1s;
+    transition:all 2s ease-in 1s;
+    transform:rotate(45deg);
+    position:absolute;
+    animation-name:animation1;
+    animation-duration:2s;
+    animation-timing-function:ease-in;
+    animation-delay:3s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+
+}
+#media2:hover{
+    transform:scaleY(2);
+    transform:rotate(360deg);
+}
+@keyframes animation1{
+    from {background-color:greenyellow;
+        left:0px;}
+    50% {background-color:rgb(255, 154, 47);
+        left:200px;}
+    to {background-color:rgb(60, 97, 4);
+        left:400px;}
+}
